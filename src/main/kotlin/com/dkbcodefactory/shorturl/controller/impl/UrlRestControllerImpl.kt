@@ -15,12 +15,12 @@ import javax.websocket.server.PathParam
 @RequestMapping("/url")
 class UrlRestControllerImpl(private val urlService: UrlService ) : UrlRestController {
 
-    @PostMapping("/short")
+    @PostMapping("/create")
     override fun getShortUrl(@RequestBody request : UrlRequest) : UrlResponse {
         return urlService.checkingUrl(request)
     }
 
-    @GetMapping("/original/{shortUrl}")
+    @GetMapping("/{shortUrl}")
     override fun getOriginalUrl(@PathParam("shortUrl") shortUrl: String): UrlResponse {
         return urlService.findOriginalUrl(shortUrl);
     }
