@@ -34,3 +34,8 @@ Storage:
     - 10M * 12 Month * 1K = 120G for a year
 
 
+Pulling and Running app:
+  - docker image pull momo7012/shorturl
+  - docker container run -p 80:8090 -d --name shortingurl --rm momo7012/shorturl
+
+
